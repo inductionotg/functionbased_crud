@@ -25,4 +25,5 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('r/', views.ret_view),
     path('cr/', views.create_view),
+    path('delete/<int:id>', views.delete_view),
 ]
