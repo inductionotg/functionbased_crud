@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+{%extends 'testApp/crud.html'%}
+    {%block body_block%}
+    <h1>
+        Insert New Record
+    </h1>
+<form method="post">
+    <table border="1">
+    {{form}}
+
+    </table>
+{%csrf_token%}
+    <input type="submit" class="btn btn-primary btn-lg" name="" value="Insert Record">
+</form>
+    {%endblock%}
