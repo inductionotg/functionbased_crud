@@ -12,5 +12,10 @@ def create_view(request):
         form=EmployeeForm(request.POST) #get the data from the form
         if form.is_valid():#basic authentication
             form.save()#save the data from the form
-        return redirect('/')#return to homepage after submitting the form
+        return redirect('/r')#return to homepage after submitting the form
     return render(request,'testApp/create.html',{'form':form})
+
+def delete_view(request,id):
+    employee=Employee.objects.all().get(id=id)
+    employee.delete()
+    return redirect('/r')
