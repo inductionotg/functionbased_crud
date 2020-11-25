@@ -22,4 +22,9 @@ def delete_view(request,id):
 
 def update_view(request,id):
     employee=Employee.objects.get(id=id)
-    return render(request,'testApp/update.html',{"employee":employee})
+    if request.method=='POST':
+        form=EmployeeForm(request.POST,instance=employee)
+        if form.is_valid():
+            form.save()
+        return redirect('/r')
+    return render(request,'testApp/update.html',{'employee':employee})
