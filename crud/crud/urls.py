@@ -24,4 +24,5 @@ from testApp import views
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('r/', views.ret_view),
+    path('cr/', views.create_view),
 ]
