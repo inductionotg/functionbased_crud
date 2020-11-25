@@ -19,3 +19,7 @@ def delete_view(request,id):
     employee=Employee.objects.all().get(id=id)
     employee.delete()
     return redirect('/r')
+
+def update_view(request,id):
+    employee=Employee.objects.get(id=id)
+    return render(request,'testApp/update.html',{"employee":employee})
